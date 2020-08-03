@@ -49,6 +49,13 @@ export default {
             lineBottomHeight: 0
         };
     },
+    watch: {
+        list(val) {
+            // 如果传入的列表发生改变，需要重新组织 previewList
+            // 常见于搜索列表的场景
+            this.previewList = val.slice(0, this.number);
+        }
+    },
     mounted() {
         this.initData();
         this.handleScroll();
