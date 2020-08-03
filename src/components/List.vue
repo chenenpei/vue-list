@@ -6,7 +6,7 @@
                 :key="index"
                 :style="{ height: height + 'px' }"
             >
-                <slot :item="item" :index="index">{{ item }}</slot>
+                <slot name="listItem" :data="{ index, item }">{{ item }}</slot>
             </li>
             <li>Loading...</li>
         </ul>
